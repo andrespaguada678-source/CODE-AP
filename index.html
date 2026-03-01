@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CODE-AP</title>
+
+<style>
+body{
+background:#0f172a;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+.code{
+background:#1e293b;
+margin:20px auto;
+padding:15px;
+width:70%;
+border-radius:10px;
+}
+
+button{
+background:#22c55e;
+border:none;
+padding:10px;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔥 CODE-AP | Mis Códigos 🔥</h1>
+
+<div class="code">
+<pre id="c1">
+console.log("Hola Mundo");
+</pre>
+<button onclick="copiar('c1')">Copiar Código</button>
+</div>
+
+<div class="code">
+<pre id="c2">
+print("Codigo Python")
+</pre>
+<button onclick="copiar('c2')">Copiar Código</button>
+</div>
+
+<script>
+function copiar(id){
+let texto=document.getElementById(id).innerText;
+navigator.clipboard.writeText(texto);
+alert("Código copiado ✅");
+}
+</script>
+
+</body>
+</html>
