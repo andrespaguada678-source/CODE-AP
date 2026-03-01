@@ -34,6 +34,10 @@ border-radius:5px;
 <body>
 
 <h1>🔥 CODE-AP | Mis Códigos 🔥</h1>
+  <input type="text" id="buscador"
+placeholder="🔍 Buscar código..."
+onkeyup="buscarCodigo()"
+style="padding:10px;width:60%;border-radius:8px;border:none;margin:20px;">
 
 <div class="code">
 <pre id="c1">
@@ -61,6 +65,21 @@ function copiar(id){
 let texto=document.getElementById(id).innerText;
 navigator.clipboard.writeText(texto);
 alert("Código copiado ✅");
+}
+  
+  function buscarCodigo(){
+let input=document.getElementById("buscador").value.toLowerCase();
+let bloques=document.getElementsByClassName("code");
+
+for(let i=0;i<bloques.length;i++){
+let texto=bloques[i].innerText.toLowerCase();
+
+if(texto.includes(input)){
+bloques[i].style.display="block";
+}else{
+bloques[i].style.display="none";
+}
+}
 }
 </script>
 
