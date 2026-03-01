@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mis Códigos</title>
+<title>Mis Codigos Gratis</title>
 
 <style>
 body{
@@ -20,7 +19,7 @@ h1{
 
 input{
     width:100%;
-    padding:10px;
+    padding:12px;
     margin-bottom:20px;
     border-radius:8px;
     border:none;
@@ -36,6 +35,7 @@ input{
 pre{
     background:black;
     padding:10px;
+    border-radius:6px;
     overflow-x:auto;
 }
 
@@ -53,13 +53,13 @@ button{
 
 <body>
 
-<h1>📚 Mis Códigos Gratis</h1>
+<h1>📚 Biblioteca de Códigos</h1>
 
-<input type="text" id="buscador" placeholder="Buscar código..." onkeyup="buscarCodigo()">
+<input type="text" id="buscador" placeholder="Buscar codigo..." onkeyup="buscarCodigo()">
 
 <!-- JAVA -->
 <div class="code-block">
-<h3>Codigo Java</h3>
+<h3>Hola Mundo Java</h3>
 <pre><code>
 public class HolaMundo {
     public static void main(String[] args){
@@ -72,16 +72,47 @@ public class HolaMundo {
 
 <!-- PYTHON -->
 <div class="code-block">
-<h3>Codigo Python</h3>
+<h3>Hola Mundo Python</h3>
 <pre><code>
 print("Hola Mundo")
 </code></pre>
 <button onclick="copiarCodigo(this)">Copiar</button>
 </div>
 
+<!-- HTML LOGIN -->
+<div class="code-block">
+<h3>Login Basico HTML</h3>
+<pre><code>
+<form>
+<input type="text" placeholder="Usuario">
+<input type="password" placeholder="Contraseña">
+<button>Entrar</button>
+</form>
+</code></pre>
+<button onclick="copiarCodigo(this)">Copiar</button>
+</div>
+
+<!-- CSS BOTON -->
+<div class="code-block">
+<h3>Boton Animado CSS</h3>
+<pre><code>
+button{
+ background:red;
+ color:white;
+ padding:10px;
+ transition:0.3s;
+}
+
+button:hover{
+ background:black;
+}
+</code></pre>
+<button onclick="copiarCodigo(this)">Copiar</button>
+</div>
+
 <!-- C++ -->
 <div class="code-block">
-<h3>Codigo C++</h3>
+<h3>Hola Mundo C++</h3>
 <pre><code>
 #include <iostream>
 using namespace std;
@@ -94,11 +125,11 @@ int main(){
 <button onclick="copiarCodigo(this)">Copiar</button>
 </div>
 
-<!-- HTML -->
+<!-- JAVASCRIPT -->
 <div class="code-block">
-<h3>Codigo HTML</h3>
+<h3>Alerta JavaScript</h3>
 <pre><code>
-<h1>Hola Mundo</h1>
+alert("Bienvenido a mi pagina");
 </code></pre>
 <button onclick="copiarCodigo(this)">Copiar</button>
 </div>
@@ -125,4 +156,3 @@ function buscarCodigo(){
 </body>
 </html>
 ```
-
