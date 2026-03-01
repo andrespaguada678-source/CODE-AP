@@ -12,6 +12,14 @@ font-family:Arial;
 text-align:center;
 }
 
+input{
+padding:10px;
+width:60%;
+border-radius:8px;
+border:none;
+margin:20px;
+}
+
 .code{
 background:#1e293b;
 margin:20px auto;
@@ -34,40 +42,34 @@ border-radius:5px;
 <body>
 
 <h1>🔥 CODE-AP | Mis Códigos 🔥</h1>
-  <input type="text" id="buscador"
+
+<input type="text" id="buscador"
 placeholder="🔍 Buscar código..."
-onkeyup="buscarCodigo()"
-style="padding:10px;width:60%;border-radius:8px;border:none;margin:20px;">
+onkeyup="buscarCodigo()">
 
 <div class="code">
 <pre id="c1">
 console.log("Hola Mundo");
 </pre>
-<button onclick="copiar('c1')">Copiar Código</button>
+<button onclick="copiar('c1')">Copiar</button>
 </div>
 
 <div class="code">
 <pre id="c2">
 print("Codigo Python")
 </pre>
-<button onclick="copiar('c2')">Copiar Código</button>
-</div>
-
-<div class="code">
-<pre id="c3">
-alert("Nuevo codigo agregado");
-</pre>
-<button onclick="copiar('c3')">Copiar Código</button>
+<button onclick="copiar('c2')">Copiar</button>
 </div>
 
 <script>
+
 function copiar(id){
 let texto=document.getElementById(id).innerText;
 navigator.clipboard.writeText(texto);
 alert("Código copiado ✅");
 }
-  
-  function buscarCodigo(){
+
+function buscarCodigo(){
 let input=document.getElementById("buscador").value.toLowerCase();
 let bloques=document.getElementsByClassName("code");
 
@@ -81,9 +83,9 @@ bloques[i].style.display="none";
 }
 }
 }
+
 </script>
 
 </body>
 </html>
-
 
