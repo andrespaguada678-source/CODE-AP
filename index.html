@@ -1,111 +1,128 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>CODE-AP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis Códigos</title>
 
 <style>
 body{
-background:#0f172a;
-color:white;
-font-family:Arial;
-text-align:center;
+    font-family: Arial;
+    background:#0f172a;
+    color:white;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
 }
 
 input{
-padding:10px;
-width:60%;
-border-radius:8px;
-border:none;
-margin:20px;
+    width:100%;
+    padding:10px;
+    margin-bottom:20px;
+    border-radius:8px;
+    border:none;
 }
 
-.code{
-background:#1e293b;
-margin:20px auto;
-padding:15px;
-width:70%;
-border-radius:10px;
+.code-block{
+    background:#1e293b;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+pre{
+    background:black;
+    padding:10px;
+    overflow-x:auto;
 }
 
 button{
-background:#22c55e;
-border:none;
-padding:10px;
-color:white;
-cursor:pointer;
-border-radius:5px;
+    margin-top:10px;
+    padding:8px 15px;
+    border:none;
+    border-radius:6px;
+    background:#22c55e;
+    color:white;
+    cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🔥 CODE-AP | Mis Códigos 🔥</h1>
+<h1>📚 Mis Códigos Gratis</h1>
 
-<input type="text" id="buscador"
-placeholder="🔍 Buscar código..."
-onkeyup="buscarCodigo()">
+<input type="text" id="buscador" placeholder="Buscar código..." onkeyup="buscarCodigo()">
 
-<div class="code">
-<pre id="c1">
-console.log("Hola Mundo");
-</pre>
-<button onclick="copiar('c1')">Copiar</button>
+<!-- JAVA -->
+<div class="code-block">
+<h3>Codigo Java</h3>
+<pre><code>
+public class HolaMundo {
+    public static void main(String[] args){
+        System.out.println("Hola Mundo");
+    }
+}
+</code></pre>
+<button onclick="copiarCodigo(this)">Copiar</button>
 </div>
 
-<div class="code">
-<pre id="c2">
-print("Codigo Python")
-</pre>
-<button onclick="copiar('c2')">Copiar</button>
+<!-- PYTHON -->
+<div class="code-block">
+<h3>Codigo Python</h3>
+<pre><code>
+print("Hola Mundo")
+</code></pre>
+<button onclick="copiarCodigo(this)">Copiar</button>
 </div>
 
-<div class="code">
-<h3>Mensaje JavaScript</h3>
+<!-- C++ -->
+<div class="code-block">
+<h3>Codigo C++</h3>
+<pre><code>
+#include <iostream>
+using namespace std;
 
-<pre id="c3">
-alert("Bienvenido a CODE-AP");
-</pre>
-
-<button onclick="copiar('c3')">Copiar</button>
+int main(){
+    cout<<"Hola Mundo";
+    return 0;
+}
+</code></pre>
+<button onclick="copiarCodigo(this)">Copiar</button>
 </div>
 
-<div class="code">
-<h3>NOMBRE DEL CODIGO</h3>
-
-<pre id="c4">
-TU CODIGO AQUI
-</pre>
-
-<button onclick="copiar('cX')">Copiar</button>
+<!-- HTML -->
+<div class="code-block">
+<h3>Codigo HTML</h3>
+<pre><code>
+<h1>Hola Mundo</h1>
+</code></pre>
+<button onclick="copiarCodigo(this)">Copiar</button>
 </div>
-  
+
 <script>
-
-function copiar(id){
-let texto=document.getElementById(id).innerText;
-navigator.clipboard.writeText(texto);
-alert("Código copiado ✅");
+function copiarCodigo(boton){
+    let codigo = boton.parentElement.querySelector("code").innerText;
+    navigator.clipboard.writeText(codigo);
+    alert("Codigo copiado ✅");
 }
 
 function buscarCodigo(){
-let input=document.getElementById("buscador").value.toLowerCase();
-let bloques=document.getElementsByClassName("code");
+    let input = document.getElementById("buscador").value.toLowerCase();
+    let bloques = document.getElementsByClassName("code-block");
 
-for(let i=0;i<bloques.length;i++){
-let texto=bloques[i].innerText.toLowerCase();
-
-if(texto.includes(input)){
-bloques[i].style.display="block";
-}else{
-bloques[i].style.display="none";
+    for(let i=0;i<bloques.length;i++){
+        let texto = bloques[i].innerText.toLowerCase();
+        bloques[i].style.display =
+        texto.includes(input) ? "block" : "none";
+    }
 }
-}
-}
-
 </script>
 
 </body>
 </html>
+```
 
